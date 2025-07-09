@@ -1,0 +1,584 @@
+/* General Styling */
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #6C7A89;
+    --accent-color: #FFB380;
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+    --bg-light: #F8F8F8;
+    --bg-dark: #80a4c7;
+    --border-color: #DDDDDD;
+
+    --body-bg-color: #ADD8E6;
+
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+    --sidebar-width: 320px;
+    --content-max-width: 1200px; 
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--body-bg-color);
+}
+
+.container {
+    max-width: var(--content-max-width); 
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/*  wrapper for all scrollable content */
+.content-wrapper {
+    margin-right: var(--sidebar-width); 
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    box-sizing: border-box; 
+}
+
+/* Header Styling */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: transparent; 
+    padding: 0; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header .container {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 20px 40px; 
+    width: 100%;
+    background-color: transparent; 
+    box-sizing: border-box;
+}
+
+/* Ensure navigation list is centered or properly aligned within container */
+header .container nav ul {
+    display: flex;
+    justify-content: space-between; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header h1 {
+    margin: 0 0 5px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    text-shadow: none;
+}
+
+header nav {
+    width: auto;
+    max-width: var(--content-max-width); /* Align with content area */
+    margin: 0 auto; /* Center the nav bar itself */
+    padding: 12px 20px;
+    background-color: #1F2D3D;
+    border-radius: 8px;
+    border: 1px solid #31465A;
+    box-shadow: 0 4px 6px #00000033;
+    text-align: center;
+}
+
+
+header nav ul li {
+    margin: 0 var(--spacing-sm);
+    position: relative; 
+}
+
+header nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-shadow: none;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    background-color: #FFFFFF33;
+    color: var(--accent-color);
+}
+
+/* Start of Dropdown Menu Styles */
+
+/* Styles for the dropdown submenu */
+header .container nav ul li.has-submenu .submenu {
+    display: none; 
+    position: absolute; /* Positions the submenu relative to its parent  */
+    top: 100%; /* Places the submenu right below the parent link */
+    left: 0; /* Aligns the submenu with the left edge of the parent link */
+    background-color: #fff; /* White background for the dropdown */
+    min-width: 180px; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+    z-index: 1001; 
+    list-style: none; 
+    padding: 10px 0; 
+    margin: 0;
+    border-radius: 0 0 5px 5px; /* Rounded corners only at the bottom */
+}
+
+/* Styles for individual items within the submenu */
+header .container nav ul li.has-submenu .submenu li {
+    width: 100%; 
+    text-align: left; 
+    margin: 0; 
+}
+
+/* Styles for links within the submenu */
+header .container nav ul li.has-submenu .submenu li a {
+    color: var(--text-dark); /* Dark text color for readability */
+    padding: 8px 20px; /* Padding for each dropdown link */
+    text-decoration: none; 
+    display: block; /* Makes the entire link area clickable */
+    white-space: nowrap; 
+    transition: background-color 0.2s ease, color 0.2s ease; /* Smooth hover transition */
+    background-color: transparent; 
+}
+
+/* Hover effect for submenu links */
+header .container nav ul li.has-submenu .submenu li a:hover {
+    background-color: var(--bg-light); 
+    color: var(--primary-color); 
+}
+
+/* Show the dropdown when hovering over the parent  */
+header .container nav ul li.has-submenu:hover > .submenu {
+    display: block; /* Makes the submenu visible on hover */
+}
+/* End of Dropdown Menu Styles */
+
+
+.main-banner {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 350px;
+    overflow: hidden;
+    text-align: center;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.main-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Main Content Layout */
+.main-layout-wrapper {
+    flex-grow: 1;
+    max-width: var(--content-max-width);
+    margin: var(--spacing-lg) auto 0 auto;
+    z-index: 5;
+    width: 100%;
+}
+
+.main-content {
+    padding: 0 var(--spacing-md);
+    overflow-x: hidden;
+}
+
+.content-area {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--text-light);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px #0000000D;
+}
+
+/* Sidebar Styling  */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: var(--spacing-lg);
+    border-radius: 0;
+    box-shadow: 0 2px 10px #0000000D;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 11;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--accent-color);
+    border-bottom: 2px solid #FFFFFF4D;
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-lg);
+}
+
+.sidebar ul li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.sidebar ul li a.sidebar-link {
+    color: var(--text-light);
+    text-decoration: none;
+    display: block;
+    padding: var(--spacing-sm);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a.sidebar-link:hover {
+    background-color: #FFFFFF33;
+}
+
+.sidebar .news-item {
+    background-color: #FFFFFF1A;
+    padding: var(--spacing-sm);
+    border-radius: 5px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.sidebar .news-item p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.sidebar-call-to-action {
+    background-color: var(--primary-color);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    box-shadow: inset 0 0 10px #00000033;
+}
+
+.sidebar-call-to-action h4 {
+    margin-top: 0;
+    color: var(--accent-color);
+}
+
+/* Button & Link Styling */
+.button, .sidebar-button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.sidebar-button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    margin-top: var(--spacing-sm);
+}
+
+.button:hover {
+    background-color: #3A7CD0;
+    transform: translateY(-2px);
+}
+
+.sidebar-button:hover {
+    background-color: #FFC499;
+    transform: translateY(-2px);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Headings and Paragraphs */
+h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color);
+    margin: 0 0 var(--spacing-md) 0;
+    font-weight: 700;
+}
+
+.content-area p {
+    margin-bottom: var(--spacing-sm);
+}
+
+.content-area img {
+    display: block;
+    margin-bottom: 0;
+}
+
+.grid-2-columns {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin: var(--spacing-md) 0 var(--spacing-lg);
+    row-gap: var(--spacing-sm);
+}
+
+/* Grid Styling */
+.quick-facts, .program-grid, .achievement-grid, .testimonial-cards, .info-grid {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin: var(--spacing-md) 0 var(--spacing-lg);
+}
+
+.card, .program-card, .achievement-card, .testimonial-card, .info-card, .team-member-card, .donation-card {
+    background-color: var(--text-light);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    text-align: center;
+    box-shadow: 0 2px 8px #0000000D;
+    transition: transform 0.2s ease;
+}
+
+/* Apply hover effect to all relevant cards */
+.card:hover, .program-card:hover, .achievement-card:hover, .donation-card:hover, .team-member-card:hover, .info-card:hover {
+    transform: translateY(-5px);
+}
+
+.card img, .program-card img, .achievement-card img, .team-member-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.card h4, .program-card h4, .achievement-card h4, .testimonial-card h4, .info-card h4, .team-member-card h4, .donation-card h4 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.mv-flex {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.mv-card {
+    flex: 1;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #0000001A;
+    min-width: 280px;
+}
+
+.mv-card h4 {
+    color: var(--accent-color);
+}
+
+.routine-list li, .uses-list li {
+    background-color: var(--bg-light);
+    padding: var(--spacing-sm);
+    margin-bottom: 5px;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 3px;
+}
+
+.event-list .event-item {
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--secondary-color);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border-radius: 8px;
+    background-color: var(--text-light);
+}
+
+.event-list .event-item h4 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.testimonial-card {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.testimonial-card .author {
+    font-weight: bold;
+    color: var(--accent-color);
+    text-align: right;
+    margin-top: var(--spacing-sm);
+}
+
+.info-card {
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info-card h4 {
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.info-card a {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Form Styling */
+.contact-form form {
+    background-color: var(--text-light);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px #0000000D;
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: calc(100% - 20px);
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.map-placeholder {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-top: var(--spacing-md);
+    box-shadow: 0 2px 10px #0000001A;
+}
+
+.map-placeholder iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+}
+
+.social-icons a img {
+    margin-right: 10px;
+    transition: transform 0.2s ease;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.1);
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    text-align: left;
+    padding: var(--spacing-lg) var(--spacing-md); 
+    font-size: 0.95em;
+    position: relative;
+    z-index: 1; /* Keep footer behind sidebar */
+    border-top: 1px solid #ffffff22;
+    box-shadow: 0 -2px 6px #00000033;
+
+    width: 100%; 
+    border-radius: 0; 
+    box-sizing: border-box; 
+}
+
+footer .container {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        margin-right: 0; 
+    }
+
+    .sidebar {
+        position: static; 
+        width: 100%; 
+        height: auto; /* Auto height */
+        padding: var(--spacing-md);
+        order: 1;
+    }
+
+    body {
+        display: flex; 
+        flex-direction: column;
+    }
+
+    .main-layout-wrapper {
+        margin-top: var(--spacing-md);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    footer {
+        max-width: 100%; 
+        border-radius: 0; 
+    }
+}
